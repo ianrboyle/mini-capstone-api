@@ -40,4 +40,11 @@ class ProductsController < ApplicationController
     product.save
     render json: product.as_json
   end
+
+  def destroy
+    product_id = params["id"]
+    product = Product.destroy(product_id)
+    product.save
+    render json: product.as_json
+  end
 end
