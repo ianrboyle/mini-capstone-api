@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   get "/last_product" => "products#get_last_product"
   get "/second_product" => "products#get_second_product"
   get "/any_product/:product_id" => "products#get_any_product"
+  get "/products" => "products#index"
+  get "/products/:id" => "products#show"
 end
