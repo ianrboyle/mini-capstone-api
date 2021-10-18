@@ -1,8 +1,4 @@
 class Product < ApplicationRecord
-  # Create a model method called is_discounted? that returns true if an item is under $10 and false otherwise.
-  #         b. Create a model method called tax which will return the tax that would be charged for a particular product. (Assume a 9% tax rate.)
-  #         c.  Create a model method called total which will return the sum of the price + tax.
-  #          d.  Modify the products controller show action to display these model methods.
   
   def is_discounted?
     if price < 10
@@ -12,6 +8,17 @@ class Product < ApplicationRecord
     end
   end
 
-  
+  def tax
+    tax = price * 0.09
+    tax.round(3)
+  end
 
+  def total
+    total = price * 1.09
+    results = "$#{total}"
+  end
+
+  def friendly_time
+    created_at.strftime("%B %d, %Y")
+  end
 end
