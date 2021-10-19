@@ -16,5 +16,5 @@
 # product = Product.create(name: "pen", price: 1, description: "contains ink, use to write")
 
 10.times do
-  product = Product.create(name: FFaker::Product.product_name, description: FFaker::Product.product, price: FFaker::Number.number)
+  product = Product.create(name: FFaker::Product.product_name, description: FFaker::Product.product, price: FFaker::Number.decimal, quantity: FFaker::Number.number)
 end
