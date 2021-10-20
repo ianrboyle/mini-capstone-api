@@ -1,30 +1,28 @@
 ### PRODUCTS INDEX
 GET http://localhost:3000/products.json
 
+###
 POST http://localhost:3000/products.json
 Content-Type: application/json
 
 {
-  "name": "phone",
-  "price": 1000,
-  "description": "Makes calls"
+  "name": "pprroodduct",
+  "price": 10,
+  "description": "ahhhhhhh"
 }
 
 ### DELETE REQUEST
 
-DELETE http://localhost:3000/products/19.json
-# Content-Type: application/json
+DELETE http://localhost:3000/products/24.json
 
-# {
-#   "product_id": "id" 
-# }
+
 
 ### UPDATE ACTION
-PATCH http://localhost:3000/products/16.json
+PATCH http://localhost:3000/products/24.json
 Content-Type: application/json
 
 {
-  "name": "Iphone",
-  "price": 2000,
-  "description": "Makes expensive calls"
+  "name": "Remote Iphone",
+  "price": 52,
+  "description": "calls things remotely"
 }
