@@ -15,6 +15,10 @@
 
 # product = Product.create(name: "pen", price: 1, description: "contains ink, use to write")
 
-10.times do
-  product = Product.create(name: FFaker::Product.product_name, description: FFaker::Product.product, price: FFaker::Number.decimal, quantity: FFaker::Number.number)
-end
+supplier = Supplier.create(name: "Apple", email: "apple@email.com", phone_number: "555-555-1234")
+
+product = Product.create(name: FFaker::Product.product_name, description: FFaker::Product.product, price: FFaker::Number.decimal, quantity: FFaker::Number.number, supplier_id: 1)
+
+image = Image.create(url: "https://www.twinwireless.net/wp-content/uploads/2017/09/Iphone-6s.jpg", product_id: 1)
+
+
