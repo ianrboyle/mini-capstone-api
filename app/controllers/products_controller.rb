@@ -4,11 +4,17 @@ class ProductsController < ApplicationController
   
   def index
     products = Product.all
-    render json: products
+    if current_user
+      render json: products
+    else
+      render json: {message: "You are not logged in."}, status: 406
+    end
   end
   def show
     product = Product.find_by(id: params["id"])
+
     render json: product
+
   end
 
   def create
