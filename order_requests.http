@@ -4,8 +4,8 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzUyNjg4M
 Content-Type: application/json
 
 {
-  "product_id": 3,
-  "quantity": 4
+  "product_id": 6,
+  "quantity": 2
 }
 
 ###ORDER SHOW
