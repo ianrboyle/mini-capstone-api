@@ -1,6 +1,10 @@
 ### PRODUCTS INDEX
 GET http://localhost:3000/products.json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzUyNjk4NzB9.bsprGjnTi9-U0sSJxRq3QeM4Y_moHr-AE-K6ff_RY0o
+
+
+### PRODUCTS Show
+GET http://localhost:3000/products/2.json
+
 
 
 ###
@@ -8,14 +12,16 @@ POST http://localhost:3000/products.json
 Content-Type: application/json
 
 {
-  "name": "pprroodduct",
+  "name": "pprrllloodduct",
   "price": 10,
-  "description": "ahhhhhhh"
+  "description": "ahhgfhfhhhhhh",
+  "supplier_id": 1
 }
 
 ### DELETE REQUEST
 
-DELETE http://localhost:3000/products/24.json
+DELETE http://localhost:3000/products/2.json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzUyNzY1ODd9.TQOA7RQrrOjSqmnMxU6FZVagd5p5FN_vSreu3FT7Q0s
 
 
 
@@ -35,7 +41,7 @@ Content-Type: application/json
 GET http://localhost:3000/suppliers.json
 Content-Type: application/json
 
-###SHOW
+###Supplier SHOW
 GET http://localhost:3000/suppliers/3.json
 Content-Type: application/json
 

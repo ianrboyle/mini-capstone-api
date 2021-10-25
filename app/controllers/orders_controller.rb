@@ -1,24 +1,17 @@
 class OrdersController < ApplicationController
-  
+  before_action :authenticate_user
   def index
     orders = current_user.orders
-    if current_user
-      render json: orders
-    else
-      render json: {error: "You must be logged in."}, status: 406
-    end
+    render json: orders
   end
 
   def show
     order = current_user.orders.find_by(id: params["id"])
-    if current_user
-      render json: order
-    else
-      render json: {error: "You must be logged in."}, status: 406
-    end
+    render json: order
   end
   
   def create
+  
     product = Product.find_by(id: params[:product_id])
     calculated_subtotal = product.price * params["quantity"]
     calculated_tax = calculated_subtotal * 0.09

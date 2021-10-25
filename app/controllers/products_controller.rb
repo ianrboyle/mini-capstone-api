@@ -1,15 +1,12 @@
 
 
 class ProductsController < ApplicationController
-  
+  before_action :authenticate_admin, except: [:index, :show]
   def index
     products = Product.all
-    if current_user
-      render json: products
-    else
-      render json: {message: "You are not logged in."}, status: 406
-    end
+    render json: products
   end
+  
   def show
     product = Product.find_by(id: params["id"])
 
@@ -21,7 +18,8 @@ class ProductsController < ApplicationController
     product = Product.new(
       name: params["name"], 
       price: params["price"], 
-      description: params["description"]
+      description: params["description"],
+      supplier_id: params[:supplier_id]
     )
     if product.save
       render json: product
