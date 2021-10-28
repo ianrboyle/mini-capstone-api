@@ -89,3 +89,15 @@ Content-Type: application/json
   "password": "password"
 }
 
+
+
+###ORDERS REQUEST
+
+POST http://localhost:3000/orders.json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzU1MTYxMDF9.q3Q_Gdn-GMFz_mzMMgshjeH7iEnujJoKZsMpJSLjulw
+Content-Type: application/json
+
+{
+  "product_id": 12,
+  "quantity": 1
+}
