@@ -74,8 +74,8 @@ POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-  "name": "Ian",
-  "email": "ian@example.com",
+  "name": "tester",
+  "email": "tester@example.com",
   "password": "password",
   "password_confirmation": "password"
 }
@@ -85,7 +85,7 @@ POST http://localhost:3000/sessions
 Content-Type: application/json
 
 {
-  "email": "ian@example.com",
+  "email": "tester@example.com",
   "password": "password"
 }
 
@@ -94,10 +94,39 @@ Content-Type: application/json
 ###ORDERS REQUEST
 
 POST http://localhost:3000/orders.json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzU1MTYxMDF9.q3Q_Gdn-GMFz_mzMMgshjeH7iEnujJoKZsMpJSLjulw
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2MzU1MzM4Mzl9.R8KIezP9LCyCs1-EsWIAUJq-Tpl4z2BxEhRX0z2iHkM
+Content-Type: application/json
+
+# {
+#   "product_id": 12,
+#   "quantity": 1
+# }
+
+###CARTEDPRODUCTS REQUESTS
+###INDEX
+GET http://localhost:3000/carted_products.json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2MzU1MzM4Mzl9.R8KIezP9LCyCs1-EsWIAUJq-Tpl4z2BxEhRX0z2iHkM
+
+###CREATe
+POST http://localhost:3000/carted_products.json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2MzU1Mjk2MDN9.LAOCZkJ0Jkur3XEughxOs5Sh4YAlRhWXFcmhDHdpQs0
 Content-Type: application/json
 
 {
-  "product_id": 12,
-  "quantity": 1
+  "product_id": 10,
+  "quantity": 2
 }
+####
+#make a carted_products model, with product_id, quantity, user_id, status and order_id
+
+#user has many carted_products
+#product has many carted_products
+
+#products controller/ model needs an "add to cart" function that when selected, adds the product_id and other info to carted_products
+
+#carted_products controller
+# product = Product.find_by(id: params[:product_id])
+#starts with a condtional 
+# 
+# if added_to_cart
+# 

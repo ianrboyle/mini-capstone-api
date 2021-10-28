@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   post "/orders" => "orders#create"
   get "/orders/:id" => "orders#show"
   get "/orders" => "orders#index"
+  ###CARTED PRODUCTS ROUTES
+  post "/carted_products" => "carted_products#create"
+  get "/carted_products" => "carted_products#index"
 
  ###Products Routes
   get "/products" => "products#index"
